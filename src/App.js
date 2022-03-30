@@ -5,6 +5,8 @@ import Friends from './Friends/Friends';
 import About from './About/About';
 import { Route, Routes } from 'react-router-dom';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Header from './components/Header/Header';
+import FriendDetails from './components/FriendDetails/FriendDetails';
 
 function App() {
 
@@ -14,11 +16,24 @@ function App() {
     */
   return (
     <div className="App">
-      <h1>Welcome</h1>
+      
+      <Header></Header>
+
+
+      {/* these routes are common for all the components . To use them in navbar inside <Header> component use <a> or <Link> components and set the href or to(Link) value as the  route path*/}
       <Routes>
         {/* ekhane path holo website link er path , folder directory er path na  */}
         <Route path='/' element={<Home></Home>} ></Route> 
+
         <Route path='/friends' element={<Friends></Friends>} ></Route>
+
+        {/* path of a route can be part fixed and part dynamic.using this method we can also send data to that sub path from it's parent path element */}
+        <Route path='/friends/:friendId' element={<FriendDetails></FriendDetails>}></Route>
+        
+
+
+
+
         <Route path='/about' element={<About></About>} ></Route>
         <Route path='*' element={<PageNotFound></PageNotFound>} ></Route>
         {/* page er path wrong dile PageNotFound element page show korbe. Ei Route sob route er last e mention korte hobe */}
