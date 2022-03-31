@@ -29,9 +29,9 @@ const FriendDetails = () => {
 
             <p>Id: {friendId}</p>
             <br />
-            {/* <h3>{friend.name}</h3>
-            <h4>{friend.website}</h4>
-            <h4>{friend.email}</h4> */}
+            <h3>{friend?.name}</h3>
+            <h4>{friend?.website}</h4>
+            <h4>{friend?.email}</h4>
         </div>
     );
 };

@@ -7,6 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import PageNotFound from './components/PageNotFound/PageNotFound';
 import Header from './components/Header/Header';
 import FriendDetails from './components/FriendDetails/FriendDetails';
+import Posts from './components/Posts/Posts';
+import PostDetails from './components/PostDetails/PostDetails';
 
 function App() {
 
@@ -29,6 +31,11 @@ function App() {
 
         {/* path of a route can be part fixed and part dynamic.using this method we can also send data to that sub path from it's parent path element */}
         <Route path='/friends/:friendId' element={<FriendDetails></FriendDetails>}></Route>
+
+        {/* Nested Route. Special system Outlet is required */}
+        <Route path='/posts' element={<Posts></Posts>}>
+          <Route path=':postId' element={ <PostDetails></PostDetails> }></Route>
+        </Route>
         
 
 
