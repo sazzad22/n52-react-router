@@ -21,6 +21,7 @@ function App() {
       
       <Header></Header>
 
+      {/* steps to start routing - install route- index.js e <BrowserRouter> import kore tar veotre <app/> ke rakha - state the route inside routes in app.js - declare route in <Route> - here set path and element (where you want it to go ) - click kore different route e jawar jonno Header component e nav er moddhe <Link > create kore path set kore dite hobe */}
 
       {/* these routes are common for all the components . To use them in navbar inside <Header> component use <a> or <Link> components and set the href or to(Link) value as the  route path*/}
       <Routes>
